@@ -20,3 +20,8 @@ Deploy to Cloudflare Pages:
 Before publishing:
 - Replace /buy, /contact, /book, /calendar-ads, and /best-of with your live URLs.
 - Update copy and any pricing as needed.
+
+
+V2 update:
+- Home page now focuses on mission, community, and advertiser value.
+- Separate pages added: offerings.html, calendar.html, best-of.html
