@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advertise with the Vallejo Sun</title>
+  <meta name="description" content="Reach engaged local readers in Vallejo and Solano County through the Vallejo Sun." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #0c0c0c;
+      --surface-2: #f7f7f7;
+      --text: #111111;
+      --text-light: #ffffff;
+      --muted: #5f5f5f;
+      --border: #e6e6e6;
+      --accent: #fed700;
+      --accent-hover: #e7c300;
+      --max: 1180px;
+      --radius: 20px;
+      --shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .brand img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(1);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 999px;
+      padding: 0.85rem 1.15rem;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.2s ease;
+      min-height: 46px;
+      text-align: center;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #111;
+      border-color: #d8d8d8;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .btn-block { width: 100%; }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.52) 38%, rgba(0,0,0,0.16) 100%),
+        url("./images/hero-sax-player.jpg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 5rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+    }
+
+    h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+    h3 { font-size: 1.2rem; }
+
+    .lead {
+      font-size: clamp(1.08rem, 2.2vw, 1.3rem);
+      color: rgba(255,255,255,0.9);
+      max-width: 42rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.95);
+      color: #111;
+      border-radius: 24px;
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+      max-width: 420px;
+      justify-self: end;
+    }
+
+    .stats {
+      display: grid;
+      gap: 0.9rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid #ededed;
+      border-radius: 16px;
+      padding: 1rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-bottom: 0.25rem;
+      color: #111;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-head {
+      max-width: 46rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.06rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .cards-2 { grid-template-columns: 1fr; }
+    .cards-3 { grid-template-columns: 1fr; }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .split-band {
+      background: #0f0f0f;
+      color: #fff;
+    }
+
+    .split-band .section-head p,
+    .split-band .card p,
+    .split-band .card li {
+      color: rgba(255,255,255,0.76);
+    }
+
+    .split-band .card {
+      background: #151515;
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: none;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .kicker {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .split-band .kicker {
+      color: rgba(255,255,255,0.66);
+    }
+
+    .list {
+      margin: 0 0 1.25rem;
+      padding-left: 1.1rem;
+    }
+
+    .quote {
+      padding: 1.25rem;
+      border-left: 4px solid var(--accent);
+      background: #fffdf2;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .quote p {
+      margin: 0 0 0.75rem;
+      font-size: 1.02rem;
+      color: #222;
+    }
+
+    .quote footer {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      position: relative;
+      padding-left: 4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #111;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .cta {
+      background: linear-gradient(180deg, #fff 0%, #f6f6f6 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cta-box {
+      background: #111;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box .lead {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .cta-box .small {
+      color: rgba(255,255,255,0.72);
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      background: #fff;
+    }
+
+    .pill-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .pill-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    @media (min-width: 760px) {
+      .nav-links { display: flex; }
+      .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .photos { grid-template-columns: 1.3fr 0.9fr 0.9fr; }
+      .photos .photo-card:first-child { grid-row: span 2; }
+      .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    @media (max-width: 759px) {
+      .nav-actions .btn:not(.btn-primary) { display: none; }
+      .btn, .hero-actions .btn, .cta-actions .btn { width: 100%; }
+      .brand img { height: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Vallejo Sun Media Kit home">
+        <img src="./images/vallejo-sun-logo.png" alt="Vallejo Sun" />
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#audience">Audience</a>
+        <a href="#products">Ad Offerings</a>
+        <a href="#calendar">Calendar Ads</a>
+        <a href="#bestof">Best Of Contest</a>
+        <a href="#photos">Community</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-outline-light" href="/book">Book a Call</a>
+        <a class="btn btn-primary" href="/buy">Buy Ads</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Local digital advertising</div>
+          <h1>Reach engaged Vallejo readers through trusted local journalism.</h1>
+          <p class="lead">
+            Advertise with the Vallejo Sun through display ads, newsletters, special contests,
+            and community calendar placements designed for local businesses and organizations.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/buy">Buy Ads</a>
+            <a class="btn btn-secondary" href="/contact">Ask a Question</a>
+            <a class="btn btn-outline-light" href="/book">Book a Call</a>
+          </div>
+
+          <p class="small" style="color: rgba(255,255,255,0.72);">
+            Replace /buy, /contact, and /book with your live links.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <div class="stats">
+            <div class="stat">
+              <strong>6,200</strong>
+              <span>newsletter readers</span>
+            </div>
+            <div class="stat">
+              <strong>40–50%</strong>
+              <span>open rate</span>
+            </div>
+            <div class="stat">
+              <strong>80%+</strong>
+              <span>live in Vallejo</span>
+            </div>
+            <div class="stat">
+              <strong>Trusted</strong>
+              <span>audience takes action locally</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="container">
+        <div class="section-head">
+          <h2>Audience</h2>
+          <p>
+            The Vallejo Sun reaches civic-minded local readers across Vallejo and Solano County.
+            Readers use the Sun to decide where they spend, attend, support, and participate.
+          </p>
+        </div>
+
+        <div class="grid cards-3">
+          <article class="card">
+            <h3>Local reach</h3>
+            <p>Most readers are in Vallejo, with additional reach in Benicia and nearby communities.</p>
+          </article>
+          <article class="card">
+            <h3>High trust</h3>
+            <p>Readers rely on the Vallejo Sun for local reporting and act on what they read.</p>
+          </article>
+          <article class="card">
+            <h3>Strong engagement</h3>
+            <p>Newsletter readers and site visitors are consistent, attentive, and community-focused.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-band" id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ad offerings</h2>
+          <p>
+            Highlight your core placements first. These cards can link to your product selector
+            or checkout flow.
+          </p>
+        </div>
+
+        <div class="grid cards-2">
+          <article class="card">
+            <div class="price">$500</div>
+            <div class="kicker">Leaderboard ad · per month</div>
+            <ul class="list">
+              <li>Top placement on articles and homepage</li>
+              <li>High visibility on desktop and mobile</li>
+              <li>Best for broad branding and sustained reach</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="/buy?product=leaderboard">Buy Leaderboard</a>
+          </article>
+
+          <article class="card">
+            <div class="price">$300</div>
+            <div class="kicker">In-story ad · per month</div>
+            <ul class="list">
+              <li>Appears throughout article content</li>
+              <li>High-volume placement</li>
+              <li>Best for visibility across regular readers</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="/buy?product=instory">Buy In-story</a>
+          </article>
+
+          <article class="card">
+            <div class="price">$100</div>
+            <div class="kicker">Weekly newsletter placement</div>
+            <ul class="list">
+              <li>Direct access to engaged email subscribers</li>
+              <li>Distributed every Friday</li>
+              <li>Strong open and click-through rates</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="/buy?product=weekly-newsletter">Buy Newsletter Ad</a>
+          </article>
+
+          <article class="card">
+            <div class="price">$100</div>
+            <div class="kicker">Arts &amp; Entertainment newsletter placement</div>
+            <ul class="list">
+              <li>Target readers looking for local events</li>
+              <li>Distributed every Wednesday</li>
+              <li>Good fit for venues and event promotion</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="/buy?product=arts-newsletter">Buy Arts Placement</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar">
+      <div class="container">
+        <div class="section-head">
+          <h2>Calendar advertising</h2>
+          <p>
+            Promote events and community happenings through your calendar placements and event-focused products.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Community calendar promotion</h3>
+          <p>
+            Use this section to describe calendar sponsorships, featured event listings, or other time-sensitive
+            promotions. Link this section to the separate sales system you use for calendar ads.
+          </p>
+          <div class="pill-links">
+            <a href="/calendar-ads">View calendar options</a>
+            <a href="/book">Talk through event promotion</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bestof">
+      <div class="container">
+        <div class="section-head">
+          <h2>Best Of contest</h2>
+          <p>
+            Feature your annual or seasonal Best Of sponsorships here and direct advertisers to the separate
+            contest sales flow.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Best Of sponsorship opportunities</h3>
+          <p>
+            Add contest dates, audience reach, sponsorship levels, and voting-period promotion options.
+            This section is designed to link out to a separate platform or intake flow.
+          </p>
+          <div class="pill-links">
+            <a href="/best-of">View Best Of options</a>
+            <a href="/contact">Ask about contest sponsorships</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="container">
+        <div class="section-head">
+          <h2>Community</h2>
+          <p>
+            Use local imagery to make the page feel rooted in Vallejo and to show the businesses,
+            events, and people your advertisers want to reach.
+          </p>
+        </div>
+
+        <div class="photos">
+          <figure class="photo-card"><img src="./images/art-walk-table-customers.jpg" alt="People browsing artwork at a Vallejo Art Walk table." /></figure>
+          <figure class="photo-card"><img src="./images/art-walk-tables-pointing.jpg" alt="A person browsing artwork at an outdoor table." /></figure>
+          <figure class="photo-card"><img src="./images/art-walk-taco-truck.jpg" alt="People gathered near a taco truck at night." /></figure>
+          <figure class="photo-card"><img src="./images/art-walk-sitting-table.jpg" alt="An artist seated behind a display table during an outdoor event." /></figure>
+          <figure class="photo-card"><img src="./images/art-walk-storefront-windows.jpg" alt="A lit storefront displaying artwork and local retail activity." /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Results</h2>
+          <p>Use one or two advertiser quotes to show concrete value.</p>
+        </div>
+
+        <div class="grid cards-2">
+          <blockquote class="quote">
+            <p>
+              “Whenever you send out your newsletters, we get a good number of requests coming
+              through. We’re doing our best to spread more awareness to the brand and it’s been working.”
+            </p>
+            <footer>— Melissa Batiller, Smartfiber Networks</footer>
+          </blockquote>
+
+          <blockquote class="quote">
+            <p>
+              “I have heard from clients that they like seeing my advertised listings on the site
+              and from people who have become new clients due to my consistent advertising.”
+            </p>
+            <footer>— Diana Lang, Vallejo realtor</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>Keep the process short and clear.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <h3>Select products</h3>
+            <p>Choose one or more placements that fit your campaign and budget.</p>
+          </div>
+          <div class="step">
+            <h3>Checkout</h3>
+            <p>Complete payment online or enter the relevant sales flow for the product you choose.</p>
+          </div>
+          <div class="step">
+            <h3>Submit details</h3>
+            <p>After checkout, upload creative and share dates or campaign notes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to advertise?</h2>
+          <p class="lead" style="margin-bottom: 0;">
+            Buy online, ask a question, or book a call to talk through the right placement.
+          </p>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="/buy">Buy Ads</a>
+            <a class="btn btn-secondary" href="/contact">Ask a Question</a>
+            <a class="btn btn-outline-light" href="/book">Book a Call</a>
+          </div>
+
+          <p class="small" style="margin-top: 1rem;">
+            Contact: Scott Morris · scott@vallejosun.com · (510) 871-5114
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>Vallejo Sun Media Kit</div>
+      <div class="small">Update links, copy, pricing, and product destinations before publishing.</div>
+    </div>
+  </footer>
+</body>
+</html>
