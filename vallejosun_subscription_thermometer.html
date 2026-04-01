@@ -522,15 +522,26 @@
       return map[baseKey] || "";
     }
 
-    function daysLeft() {
-      const now = new Date();
-      const end = new Date(now.getFullYear(), 4, 0);
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const diff = Math.ceil((end - today) / (1000 * 60 * 60 * 24));
-      if (diff <= 0) return "Last day";
-      if (diff === 1) return "1 day left";
-      return diff + " days left";
-    }
+function daysLeft() {
+  const now = new Date();
+
+  const laNow = new Date(
+    now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
+  );
+
+  const year = laNow.getFullYear();
+  const month = laNow.getMonth();
+  const day = laNow.getDate();
+
+  const todayLa = new Date(year, month, day);
+  const endLa = new Date(year, 4, 0); // April 30
+
+  const diff = Math.ceil((endLa - todayLa) / (1000 * 60 * 60 * 24));
+
+  if (diff <= 0) return "Last day";
+  if (diff === 1) return "1 day left";
+  return diff + " days left";
+}
 
     function parseCsvLine(line) {
       const values = [];
