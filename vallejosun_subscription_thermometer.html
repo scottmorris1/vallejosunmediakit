@@ -206,6 +206,7 @@
       padding: 14px 16px;
       gap: 8px;
       justify-content: flex-start;
+      border-radius: 0;
     }
 
     .ad-horizontal .brand-row {
@@ -332,6 +333,7 @@
       padding: 16px 20px;
       gap: 10px;
       justify-content: flex-start;
+      border-radius: 0;
     }
 
     .ad-wide .brand-row {
@@ -504,6 +506,22 @@
       };
     }
 
+    function pickModeValue(map, baseKey, mode) {
+      const suffixMap = {
+        horizontal: "_horizontal",
+        vertical: "_vertical",
+        wide: "_wide"
+      };
+
+      const suffix = suffixMap[mode];
+      if (suffix) {
+        const modeKey = baseKey + suffix;
+        if (map[modeKey]) return map[modeKey];
+      }
+
+      return map[baseKey] || "";
+    }
+
     function daysLeft() {
       const now = new Date();
       const end = new Date(now.getFullYear(), 4, 0);
@@ -557,7 +575,7 @@
         const lines = text.split(/\r?\n/).filter(Boolean);
         const headers = parseCsvLine(lines[0] || "");
         const row = parseCsvLine(lines[1] || "");
-        const map = Object.fromEntries(headers.map((h, i) => [h, row[i] ?? ""]));
+        map = Object.fromEntries(headers.map((h, i) => [h, row[i] ?? ""]));
         current = Number(map.current) || 0;
         goal = Number(map.goal) || 100;
       }
@@ -567,6 +585,11 @@
 
       const percent = Math.max(0, Math.min(100, Math.round((current / goal) * 100)));
       const remaining = Math.max(goal - current, 0);
+      let map = {};
+
+      if (current === null && CONFIG.sheetCsvUrl && !CONFIG.sheetCsvUrl.includes("PASTE")) {
+        // map already set in CSV block
+      }
 
       document.getElementById("current").textContent = format(current);
       document.getElementById("goal").textContent = format(goal);
@@ -575,10 +598,15 @@
       document.getElementById("summary").textContent = format(current) + " of " + format(goal);
       document.getElementById("bar").style.width = percent + "%";
 
-      document.getElementById("headline").textContent = defaults.headline;
-      document.getElementById("subhead").textContent = defaults.subhead;
-      document.getElementById("cta").textContent = defaults.cta;
-      document.getElementById("cta").href = CONFIG.subscribeUrl;
+      const headline = pickModeValue(map, "headline", mode) || defaults.headline;
+      const subhead = pickModeValue(map, "subhead", mode) || defaults.subhead;
+      const ctaText = pickModeValue(map, "cta_text", mode) || defaults.cta;
+      const ctaUrl = pickModeValue(map, "cta_url", mode) || CONFIG.subscribeUrl;
+
+      document.getElementById("headline").textContent = headline;
+      document.getElementById("subhead").textContent = subhead;
+      document.getElementById("cta").textContent = ctaText;
+      document.getElementById("cta").href = ctaUrl;
       document.getElementById("brandLogo").src = CONFIG.brandLogoUrl;
       document.getElementById("brandLink").href = "https://www.vallejosun.com";
       document.getElementById("daysLeft").textContent = daysLeft();
