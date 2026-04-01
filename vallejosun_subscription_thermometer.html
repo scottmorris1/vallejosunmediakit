@@ -23,11 +23,9 @@
       margin: 0;
       padding: 0;
       width: 100%;
-      height: auto;
-      overflow: auto;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
       background: transparent;
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
@@ -39,9 +37,6 @@
     .widget {
       width: 100%;
       background: transparent;
-      border: 0;
-      border-radius: 0;
-      box-shadow: none;
       padding: 0;
     }
 
@@ -62,10 +57,6 @@
       margin: 24px auto;
     }
 
-    .article .panel {
-      padding: 20px;
-    }
-
     .brand-row {
       display: flex;
       justify-content: space-between;
@@ -76,16 +67,16 @@
     .brand-link {
       display: inline-flex;
       align-items: center;
-      min-width: 0;
       text-decoration: none;
+      min-width: 0;
     }
 
     .brand-logo {
       display: block;
-      max-width: 220px;
-      max-height: 48px;
       width: auto;
       height: auto;
+      max-width: 220px;
+      max-height: 48px;
     }
 
     .eyebrow {
@@ -93,20 +84,19 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      text-align: right;
       white-space: nowrap;
     }
 
     h1 {
+      margin: 0;
       font-size: 32px;
       line-height: 1.02;
-      margin: 0;
       letter-spacing: -0.02em;
     }
 
     .subhead {
-      color: var(--muted);
       margin: 0;
+      color: var(--muted);
       font-size: 16px;
       line-height: 1.3;
     }
@@ -118,12 +108,15 @@
     }
 
     .badge {
-      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
       padding: 6px 10px;
+      border: 1px solid var(--border);
       border-radius: 999px;
+      background: #fff;
       font-size: 13px;
       font-weight: 700;
-      background: #fff;
     }
 
     .stats {
@@ -134,8 +127,8 @@
 
     .stat {
       border: 1px solid var(--border);
-      padding: 10px;
       border-radius: 12px;
+      padding: 10px;
       background: #fff;
     }
 
@@ -155,17 +148,17 @@
     }
 
     .progress-bar {
-      height: 20px;
+      width: 100%;
+      height: 18px;
+      border: 1px solid var(--border);
       border-radius: 999px;
       background: var(--track);
       overflow: hidden;
-      border: 1px solid var(--border);
-      position: relative;
     }
 
     .progress-bar-fill {
-      height: 100%;
       width: 0%;
+      height: 100%;
       background: linear-gradient(90deg, #fed700 0%, #fff3a0 100%);
       box-shadow: 0 0 12px rgba(254,215,0,0.45);
       transition: width 0.8s ease;
@@ -176,10 +169,10 @@
       display: flex;
       justify-content: space-between;
       gap: 12px;
+      flex-wrap: wrap;
       font-size: 13px;
       color: var(--muted);
       font-weight: 700;
-      flex-wrap: wrap;
     }
 
     .cta {
@@ -187,13 +180,14 @@
       align-items: center;
       justify-content: center;
       align-self: flex-start;
-      background: var(--accent);
-      color: #000;
+      min-height: 40px;
       padding: 10px 14px;
-      text-decoration: none;
-      font-weight: 900;
       border: 1px solid var(--border);
       border-radius: 999px;
+      background: var(--accent);
+      color: #000000;
+      text-decoration: none;
+      font-weight: 900;
       white-space: nowrap;
     }
 
@@ -210,18 +204,17 @@
     .ad-horizontal .panel {
       height: 250px;
       padding: 14px 16px;
-      justify-content: flex-start;
       gap: 8px;
+      justify-content: flex-start;
     }
 
     .ad-horizontal .brand-row {
       align-items: flex-start;
       gap: 22px;
-      margin-bottom: 2px;
     }
 
     .ad-horizontal .brand-logo {
-      max-width: 168px;
+      max-width: 165px;
       max-height: 34px;
     }
 
@@ -237,20 +230,13 @@
 
     .ad-horizontal .subhead {
       font-size: 14px;
-      line-height: 1.2;
-    }
-
-    .ad-horizontal .meta-row {
-      gap: 8px;
+      line-height: 1.18;
     }
 
     .ad-horizontal .badge {
+      min-height: 28px;
+      padding: 4px 8px;
       font-size: 11px;
-      padding: 5px 9px;
-    }
-
-    .ad-horizontal .stats {
-      gap: 8px;
     }
 
     .ad-horizontal .stat {
@@ -268,7 +254,6 @@
 
     .ad-horizontal .progress-bar {
       height: 14px;
-      margin-top: 2px;
     }
 
     .ad-horizontal .progress-caption {
@@ -277,9 +262,9 @@
     }
 
     .ad-horizontal .cta {
-      padding: 8px 12px;
+      min-height: 34px;
+      padding: 7px 11px;
       font-size: 12px;
-      margin-top: 2px;
     }
 
     .ad-vertical {
@@ -306,7 +291,6 @@
     }
 
     .ad-vertical .eyebrow {
-      text-align: left;
       font-size: 11px;
     }
 
@@ -317,7 +301,7 @@
 
     .ad-vertical .subhead {
       font-size: 15px;
-      line-height: 1.25;
+      line-height: 1.24;
     }
 
     .ad-vertical .stats {
@@ -330,9 +314,9 @@
     }
 
     .ad-vertical .progress-caption {
-      font-size: 12px;
       flex-direction: column;
       gap: 4px;
+      font-size: 12px;
     }
 
     .ad-vertical .cta {
@@ -349,14 +333,13 @@
     .ad-wide .panel {
       height: 300px;
       padding: 16px 20px;
-      justify-content: flex-start;
       gap: 10px;
+      justify-content: flex-start;
     }
 
     .ad-wide .brand-row {
       align-items: flex-start;
       gap: 24px;
-      margin-bottom: 2px;
     }
 
     .ad-wide .brand-logo {
@@ -376,17 +359,14 @@
 
     .ad-wide .subhead {
       font-size: 15px;
-      line-height: 1.22;
+      line-height: 1.2;
       max-width: 78ch;
     }
 
     .ad-wide .badge {
+      min-height: 30px;
+      padding: 5px 9px;
       font-size: 12px;
-      padding: 5px 10px;
-    }
-
-    .ad-wide .stats {
-      gap: 10px;
     }
 
     .ad-wide .stat {
@@ -399,7 +379,6 @@
 
     .ad-wide .progress-bar {
       height: 16px;
-      margin-top: 2px;
     }
 
     .ad-wide .progress-caption {
@@ -407,7 +386,8 @@
     }
 
     .ad-wide .cta {
-      padding: 9px 13px;
+      min-height: 36px;
+      padding: 8px 12px;
       font-size: 13px;
     }
 
@@ -421,10 +401,6 @@
       .brand-row {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .eyebrow {
-        text-align: left;
       }
 
       .stats {
@@ -443,202 +419,197 @@
   </style>
 </head>
 <body>
-<section class="widget" id="widget">
-  <div class="panel">
-    <div class="brand-row">
-      <a class="brand-link" href="https://www.vallejosun.com" target="_blank" rel="noopener noreferrer">
-        <img class="brand-logo" id="brandLogo" alt="Vallejo Sun" />
-      </a>
-      <div class="eyebrow">Spring Membership Drive</div>
-    </div>
-
-    <h1 id="headline"></h1>
-    <p class="subhead" id="subhead"></p>
-
-    <div class="meta-row">
-      <div class="badge" id="daysLeft"></div>
-      <div class="badge" id="updated"></div>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-label">Members</div>
-        <div class="stat-value" id="current"></div>
+  <section class="widget" id="widget">
+    <div class="panel">
+      <div class="brand-row">
+        <a class="brand-link" id="brandLink" href="https://www.vallejosun.com" target="_blank" rel="noopener noreferrer">
+          <img class="brand-logo" id="brandLogo" alt="Vallejo Sun" />
+        </a>
+        <div class="eyebrow">Spring Membership Drive</div>
       </div>
-      <div class="stat">
-        <div class="stat-label">Goal</div>
-        <div class="stat-value" id="goal"></div>
+
+      <h1 id="headline"></h1>
+      <p class="subhead" id="subhead"></p>
+
+      <div class="meta-row">
+        <div class="badge" id="daysLeft"></div>
+        <div class="badge" id="updated"></div>
       </div>
-      <div class="stat">
-        <div class="stat-label">Progress</div>
-        <div class="stat-value" id="percent"></div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label">Members</div>
+          <div class="stat-value" id="current"></div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Goal</div>
+          <div class="stat-value" id="goal"></div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Progress</div>
+          <div class="stat-value" id="percent"></div>
+        </div>
       </div>
+
+      <div class="progress-bar">
+        <div id="bar" class="progress-bar-fill"></div>
+      </div>
+
+      <div class="progress-caption">
+        <span id="remaining"></span>
+        <span id="summary"></span>
+      </div>
+
+      <a id="cta" class="cta" target="_blank" rel="noopener noreferrer"></a>
     </div>
+  </section>
 
-    <div class="progress-bar"><div id="bar" class="progress-bar-fill"></div></div>
+  <script>
+    const CONFIG = {
+      sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSHfbZ_8WikIY9OUJ17gOMhZfJJVIRNABlskTF5Soumh_vmaIe_lW36OOvBq-tkBUFTtDy25pN7Mh58/pub?output=csv",
+      brandLogoUrl: "https://www.vallejosun.com/content/images/2026/03/VallejoSunlogoidea6-1000px-transparent.png",
+      subscribeUrl: "https://www.vallejosun.com/membership"
+    };
 
-    <div class="progress-caption">
-      <span id="remaining"></span>
-      <span id="summary"></span>
-    </div>
-
-    <a id="cta" class="cta" target="_blank" rel="noopener noreferrer"></a>
-  </div>
-</section>
-
-<script>
-const CONFIG = {
-  sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSHfbZ_8WikIY9OUJ17gOMhZfJJVIRNABlskTF5Soumh_vmaIe_lW36OOvBq-tkBUFTtDy25pN7Mh58/pub?output=csv",
-  brandLogoUrl: "https://www.vallejosun.com/content/images/2026/03/VallejoSunlogoidea6-1000px-transparent.png",
-  subscribeUrl: "https://www.vallejosun.com/membership"
-};
-
-function getParam(name) {
-  const p = new URLSearchParams(location.search);
-  return p.get(name);
-}
-
-function format(n) {
-  return new Intl.NumberFormat("en-US").format(n);
-}
-
-function daysLeft() {
-  const now = new Date();
-  const end = new Date(now.getFullYear(), 4, 0);
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const d = Math.ceil((end - today) / (1000 * 60 * 60 * 24));
-  if (d <= 0) return "Last day";
-  if (d === 1) return "1 day left";
-  return d + " days left";
-}
-
-function parseCsvLine(line) {
-  const out = [];
-  let current = "";
-  let inQuotes = false;
-
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
-    const next = line[i + 1];
-
-    if (char === '"') {
-      if (inQuotes && next === '"') {
-        current += '"';
-        i++;
-      } else {
-        inQuotes = !inQuotes;
-      }
-    } else if (char === "," && !inQuotes) {
-      out.push(current);
-      current = "";
-    } else {
-      current += char;
+    function getParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
     }
-  }
 
-  out.push(current);
-  return out.map(v => v.trim());
-}
+    function format(n) {
+      return new Intl.NumberFormat("en-US").format(n);
+    }
 
-function getDefaultCopy(mode) {
-  if (mode === "horizontal") {
-    return {
-      headline: "Keep the Sun shining",
-      subhead: "Join 100 Vallejo members this spring",
-      cta: "Become a member"
-    };
-  }
+    function getDefaults(mode) {
+      if (mode === "horizontal") {
+        return {
+          headline: "Keep the Sun shining",
+          subhead: "Join 100 Vallejo members this spring",
+          cta: "Become a member"
+        };
+      }
+      if (mode === "vertical") {
+        return {
+          headline: "Help keep the Sun shining on Vallejo",
+          subhead: "Join local members supporting independent news",
+          cta: "Join as a member"
+        };
+      }
+      if (mode === "wide") {
+        return {
+          headline: "Power the Vallejo Sun this spring",
+          subhead: "Become one of 100 members supporting local reporting",
+          cta: "Become a member"
+        };
+      }
+      return {
+        headline: "Help keep the Sun shining on Vallejo",
+        subhead: "Join Vallejo Sun members supporting local journalism",
+        cta: "Become a member"
+      };
+    }
 
-  if (mode === "vertical") {
-    return {
-      headline: "Help keep the Sun shining on Vallejo",
-      subhead: "Join local members supporting independent news",
-      cta: "Join as a member"
-    };
-  }
+    function daysLeft() {
+      const now = new Date();
+      const end = new Date(now.getFullYear(), 4, 0);
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const diff = Math.ceil((end - today) / (1000 * 60 * 60 * 24));
+      if (diff <= 0) return "Last day";
+      if (diff === 1) return "1 day left";
+      return diff + " days left";
+    }
 
-  if (mode === "wide") {
-    return {
-      headline: "Power the Vallejo Sun this spring",
-      subhead: "Become one of 100 members supporting local reporting",
-      cta: "Become a member"
-    };
-  }
+    function parseCsvLine(line) {
+      const values = [];
+      let current = "";
+      let inQuotes = false;
 
-  return {
-    headline: "Help keep the Sun shining on Vallejo",
-    subhead: "Join Vallejo Sun members supporting local journalism",
-    cta: "Become a member"
-  };
-}
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const next = line[i + 1];
 
-async function load() {
-  const mode = getParam("mode") || "article";
-  const previewCurrent = getParam("preview_current");
-  const previewGoal = getParam("preview_goal");
+        if (char === '"') {
+          if (inQuotes && next === '"') {
+            current += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === "," && !inQuotes) {
+          values.push(current);
+          current = "";
+        } else {
+          current += char;
+        }
+      }
 
-  let current = previewCurrent !== null ? Number(previewCurrent) : null;
-  let goal = previewGoal !== null ? Number(previewGoal) : null;
+      values.push(current);
+      return values.map(v => v.trim());
+    }
 
-  if (current === null && CONFIG.sheetCsvUrl && !CONFIG.sheetCsvUrl.includes("PASTE")) {
-    const res = await fetch(CONFIG.sheetCsvUrl, { cache: "no-store" });
-    const text = await res.text();
+    async function load() {
+      const mode = getParam("mode") || "article";
+      const defaults = getDefaults(mode);
+      const previewCurrent = getParam("preview_current");
+      const previewGoal = getParam("preview_goal");
 
-    const lines = text.split(/
-?
-/).filter(Boolean);
-    const headers = parseCsvLine(lines[0] || "");
-    const row = parseCsvLine(lines[1] || "");
-    const map = Object.fromEntries(headers.map((h, i) => [h, row[i] ?? ""]));
+      let current = previewCurrent !== null ? Number(previewCurrent) : null;
+      let goal = previewGoal !== null ? Number(previewGoal) : null;
 
-    current = Number(map.current) || 0;
-    goal = Number(map.goal) || 100;
-  }
+      if (current === null && CONFIG.sheetCsvUrl && !CONFIG.sheetCsvUrl.includes("PASTE")) {
+        const response = await fetch(CONFIG.sheetCsvUrl, { cache: "no-store" });
+        const text = await response.text();
+        const lines = text.split(/\r?\n/).filter(Boolean);
+        const headers = parseCsvLine(lines[0] || "");
+        const row = parseCsvLine(lines[1] || "");
+        const map = Object.fromEntries(headers.map((h, i) => [h, row[i] ?? ""]));
+        current = Number(map.current) || 0;
+        goal = Number(map.goal) || 100;
+      }
 
-  if (current === null || !Number.isFinite(current)) current = 0;
-  if (goal === null || !Number.isFinite(goal) || goal <= 0) goal = 100;
+      if (current === null || !Number.isFinite(current)) current = 0;
+      if (goal === null || !Number.isFinite(goal) || goal <= 0) goal = 100;
 
-  const percent = Math.max(0, Math.min(100, Math.round((current / goal) * 100)));
-  const remaining = Math.max(goal - current, 0);
-  const defaults = getDefaultCopy(mode);
+      const percent = Math.max(0, Math.min(100, Math.round((current / goal) * 100)));
+      const remaining = Math.max(goal - current, 0);
 
-  document.getElementById("current").textContent = format(current);
-  document.getElementById("goal").textContent = format(goal);
-  document.getElementById("percent").textContent = percent + "%";
-  document.getElementById("remaining").textContent = remaining + " member" + (remaining === 1 ? "" : "s") + " to go";
-  document.getElementById("summary").textContent = format(current) + " of " + format(goal);
-  document.getElementById("bar").style.width = percent + "%";
+      document.getElementById("current").textContent = format(current);
+      document.getElementById("goal").textContent = format(goal);
+      document.getElementById("percent").textContent = percent + "%";
+      document.getElementById("remaining").textContent = remaining + " member" + (remaining === 1 ? "" : "s") + " to go";
+      document.getElementById("summary").textContent = format(current) + " of " + format(goal);
+      document.getElementById("bar").style.width = percent + "%";
 
-  document.getElementById("headline").textContent = defaults.headline;
-  document.getElementById("subhead").textContent = defaults.subhead;
-  document.getElementById("cta").textContent = defaults.cta;
-  document.getElementById("cta").href = CONFIG.subscribeUrl;
-  document.getElementById("brandLogo").src = CONFIG.brandLogoUrl;
-  document.getElementById("daysLeft").textContent = daysLeft();
-  document.getElementById("updated").textContent = "Updated today";
-}
+      document.getElementById("headline").textContent = defaults.headline;
+      document.getElementById("subhead").textContent = defaults.subhead;
+      document.getElementById("cta").textContent = defaults.cta;
+      document.getElementById("cta").href = CONFIG.subscribeUrl;
+      document.getElementById("brandLogo").src = CONFIG.brandLogoUrl;
+      document.getElementById("brandLink").href = "https://www.vallejosun.com";
+      document.getElementById("daysLeft").textContent = daysLeft();
+      document.getElementById("updated").textContent = "Updated today";
+    }
 
-function applyMode() {
-  const m = getParam("mode");
-  const widget = document.getElementById("widget");
+    function applyMode() {
+      const mode = getParam("mode");
+      const widget = document.getElementById("widget");
+      if (mode === "horizontal") {
+        widget.classList.add("ad-horizontal");
+      } else if (mode === "vertical") {
+        widget.classList.add("ad-vertical");
+      } else if (mode === "wide") {
+        widget.classList.add("ad-wide");
+      } else {
+        widget.classList.add("article");
+      }
+    }
 
-  if (m === "horizontal") {
-    widget.classList.add("ad-horizontal");
-  } else if (m === "vertical") {
-    widget.classList.add("ad-vertical");
-  } else if (m === "wide") {
-    widget.classList.add("ad-wide");
-  } else {
-    widget.classList.add("article");
-  }
-}
-
-applyMode();
-load().catch((err) => {
-  console.error(err);
-  document.getElementById("headline").textContent = "Could not load membership progress";
-  document.getElementById("subhead").textContent = err.message;
-});
-</script>
+    applyMode();
+    load().catch((error) => {
+      console.error(error);
+      document.getElementById("headline").textContent = "Could not load membership progress";
+      document.getElementById("subhead").textContent = error.message;
+    });
+  </script>
 </body>
 </html>
