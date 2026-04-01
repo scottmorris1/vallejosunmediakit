@@ -7,21 +7,21 @@ const outputDir = path.resolve("generated");
 const targets = [
   {
     name: "horizontal",
-    url: "https://vallejosunmediakit.pages.dev/vallejosun_membership_thermometer.html?mode=horizontal",
+    url: "https://vallejosunmediakit.pages.dev/vallejosun_membership_thermometer?mode=horizontal",
     width: 970,
     height: 250,
     output: path.join(outputDir, "membership-horizontal.png")
   },
   {
     name: "vertical",
-    url: "https://vallejosunmediakit.pages.dev/vallejosun_membership_thermometer.html?mode=vertical",
+    url: "https://vallejosunmediakit.pages.dev/vallejosun_membership_thermometer?mode=vertical",
     width: 300,
     height: 600,
     output: path.join(outputDir, "membership-vertical.png")
   },
   {
     name: "wide",
-    url: "https://vallejosunmediakit.pages.dev/vallejosun_membership_thermometer.html?mode=wide",
+    url: "https://vallejosunmediakit.pages.dev/vallejosun_membership_thermometer?mode=wide",
     width: 1200,
     height: 300,
     output: path.join(outputDir, "membership-wide.png")
