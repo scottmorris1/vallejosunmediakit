@@ -153,8 +153,8 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   .photos { grid-template-columns: 1.3fr 0.9fr 0.9fr; }
   .photos .photo-card:first-child { grid-row: span 2; }
   .feature-grid { grid-template-columns: 1fr 1fr; }
-  .audience-layout { grid-template-columns: 1.2fr 0.8fr; align-items: start; }
-  .audience-layout { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+  
+  
 }
 @media (min-width: 980px) {
   .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
@@ -166,7 +166,24 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
 }
 
 
-.audience-layout { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+
+
+
+
+.audience-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.audience-copy {
+  min-width: 0;
+}
+
+.audience-photo {
+  min-width: 0;
+}
+
 .audience-photo img {
   width: 100%;
   height: auto;
@@ -175,4 +192,11 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   border-radius: 22px;
   box-shadow: var(--shadow);
   border: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (min-width: 760px) {
+  .audience-layout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    align-items: start;
+  }
 }
