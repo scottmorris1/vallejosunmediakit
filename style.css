@@ -200,3 +200,7 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     align-items: start;
   }
 }
+
+.cta-box .cta-actions {
+  margin-top: 1.5rem;
+}
