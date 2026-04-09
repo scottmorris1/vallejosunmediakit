@@ -30,3 +30,8 @@ V4 update:
 - Added team section with group photo
 - Added advertiser updates signup block
 - Shared CSS remains in style.css
+
+V5 update:
+- Removed standalone 'Rooted in the community' section
+- Integrated a stronger community image into 'Who reads the Vallejo Sun?'
+- Improved page flow on the home page
