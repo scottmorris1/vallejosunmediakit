@@ -2,6 +2,11 @@ Vallejo Sun media kit site
 
 Folder structure:
 - index.html
+- offerings.html
+- calendar.html
+- best-of.html
+- style.css
+- README.txt
 - images/
     - vallejo-sun-logo.png
     - hero-sax-player.jpg
@@ -10,18 +15,18 @@ Folder structure:
     - art-walk-taco-truck.jpg
     - art-walk-tables-pointing.jpg
     - art-walk-storefront-windows.jpg
-
-Deploy to Cloudflare Pages:
-1. Upload this folder to a GitHub repo, or drag-and-drop the folder contents in Pages.
-2. Set the production branch if using Git.
-3. No build command is needed.
-4. No output directory is needed; the site root is this folder.
+    - reporter-interview-1.jpg
+    - reporter-interview-2.jpg
+    - team-group-photo.jpg
+    - business-training-presentation.jpg
 
 Before publishing:
-- Replace /buy, /contact, /book, /calendar-ads, and /best-of with your live URLs.
+- Replace /buy, /contact, /book, /calendar-ads, /best-of, and /advertiser-updates with your live URLs.
 - Update copy and any pricing as needed.
 
-
-V2 update:
-- Home page now focuses on mission, community, and advertiser value.
-- Separate pages added: offerings.html, calendar.html, best-of.html
+V4 update:
+- Added reporting section with reporter photos
+- Added business training section with presentation photo
+- Added team section with group photo
+- Added advertiser updates signup block
+- Shared CSS remains in style.css

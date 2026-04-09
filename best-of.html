@@ -1,186 +1,46 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Best Of Contest · Vallejo Sun</title><style>
-    :root {
-      --bg: #ffffff;
-      --surface: #0c0c0c;
-      --surface-2: #f7f7f7;
-      --text: #111111;
-      --muted: #5f5f5f;
-      --border: #e6e6e6;
-      --accent: #fed700;
-      --accent-hover: #e7c300;
-      --max: 1180px;
-      --radius: 20px;
-      --shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.5;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(100% - 2rem, var(--max)); margin: 0 auto; }
-    .topbar {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(0, 0, 0, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; min-height: 78px;
-    }
-    .brand img { height: 36px; width: auto; object-fit: contain; }
-    .nav-links { display: none; gap: 1rem; align-items: center; flex-wrap: wrap; }
-    .nav-links a {
-      color: rgba(255,255,255,0.82);
-      font-size: 0.95rem; font-weight: 600; transition: color 0.2s ease;
-      white-space: nowrap;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-    .nav-actions { display: flex; gap: 0.75rem; align-items: center; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-      border-radius: 999px; padding: 0.85rem 1.15rem; font-weight: 800;
-      border: 1px solid transparent; cursor: pointer; transition: 0.2s ease;
-      min-height: 46px; text-align: center;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--accent); color: #111; border-color: var(--accent); }
-    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-    .btn-secondary { background: #fff; color: #111; border-color: #d8d8d8; }
-    .btn-outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.22); }
-    .btn-block { width: 100%; }
-    .hero {
-      background:
-        linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.52) 38%, rgba(0,0,0,0.16) 100%),
-        url("./images/hero-sax-player.jpg");
-      background-size: cover; background-position: center; color: #fff;
-      padding: 5rem 0 4rem;
-    }
-    .hero-grid { display: grid; gap: 2rem; align-items: end; }
-    .eyebrow {
-      display: inline-block; margin-bottom: 1rem; padding: 0.4rem 0.8rem; border-radius: 999px;
-      background: rgba(255,255,255,0.1); color: #fff; font-size: 0.92rem; font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-    h1, h2, h3 { line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 1rem; }
-    h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); }
-    h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
-    h3 { font-size: 1.2rem; }
-    .lead {
-      font-size: clamp(1.08rem, 2.2vw, 1.3rem); color: rgba(255,255,255,0.9);
-      max-width: 42rem; margin-bottom: 1.5rem;
-    }
-    .hero-actions, .cta-actions, .pill-links { display: flex; flex-wrap: wrap; gap: 0.85rem; }
-    .hero-card {
-      background: rgba(255,255,255,0.95); color: #111; border-radius: 24px; padding: 1.4rem;
-      box-shadow: var(--shadow); max-width: 420px; justify-self: end;
-    }
-    .stats { display: grid; gap: 0.9rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .stat {
-      background: #fff; border: 1px solid #ededed; border-radius: 16px; padding: 1rem;
-    }
-    .stat strong { display: block; font-size: 1.45rem; margin-bottom: 0.25rem; color: #111; }
-    section { padding: 4rem 0; }
-    .section-head { max-width: 46rem; margin-bottom: 2rem; }
-    .section-head p { color: var(--muted); margin: 0; font-size: 1.06rem; }
-    .grid { display: grid; gap: 1rem; }
-    .cards-2, .cards-3 { grid-template-columns: 1fr; }
-    .card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.35rem; box-shadow: var(--shadow);
-    }
-    .card p, .card li { color: var(--muted); }
-    .split-band { background: #0f0f0f; color: #fff; }
-    .split-band .section-head p, .split-band .card p, .split-band .card li { color: rgba(255,255,255,0.76); }
-    .split-band .card { background: #151515; border-color: rgba(255,255,255,0.08); box-shadow: none; }
-    .quote {
-      padding: 1.25rem; border-left: 4px solid var(--accent); background: #fffdf2;
-      border-radius: 0 var(--radius) var(--radius) 0;
-    }
-    .quote p { margin: 0 0 0.75rem; font-size: 1.02rem; color: #222; }
-    .quote footer { color: var(--muted); font-size: 0.95rem; }
-    .photos { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    .photo-card {
-      overflow: hidden; border-radius: 22px; background: #fff; box-shadow: var(--shadow); border: 1px solid var(--border);
-    }
-    .photo-card img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-    .cta {
-      background: linear-gradient(180deg, #fff 0%, #f6f6f6 100%);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    }
-    .cta-box {
-      background: #111; color: #fff; border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px; padding: 1.6rem; box-shadow: var(--shadow);
-    }
-    .cta-box .lead, .cta-box .small { color: rgba(255,255,255,0.82); }
-    .small { font-size: 0.92rem; color: var(--muted); }
-    .list { margin: 0 0 1.25rem; padding-left: 1.1rem; }
-    .price { font-size: 2rem; font-weight: 900; margin-bottom: 0.25rem; letter-spacing: -0.03em; }
-    .kicker { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; font-weight: 600; }
-    .split-band .kicker { color: rgba(255,255,255,0.66); }
-    footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; background: #fff; }
-    .page-header { padding: 4rem 0 2rem; background: #f7f7f7; border-bottom: 1px solid var(--border); }
-    .page-header p { max-width: 42rem; color: var(--muted); font-size: 1.05rem; }
-    @media (min-width: 760px) {
-      .nav-links { display: flex; }
-      .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .photos { grid-template-columns: 1.3fr 0.9fr 0.9fr; }
-      .photos .photo-card:first-child { grid-row: span 2; }
-    }
-    @media (min-width: 980px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; } }
-    @media (max-width: 759px) {
-      .nav-actions .btn:not(.btn-primary) { display: none; }
-      .btn, .hero-actions .btn, .cta-actions .btn { width: 100%; }
-      .brand img { height: 30px; }
-    }
-</style></head><body>
-
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="./index.html" aria-label="Vallejo Sun Media Kit home">
-        <img src="./images/vallejo-sun-logo.png" alt="Vallejo Sun" />
-      </a>
-      
-      <nav class="nav-links" aria-label="Primary">
-        <a class="" href="./index.html">Home</a>
-        <a class="" href="./offerings.html">Ad Offerings</a>
-        <a class="" href="./calendar.html">Calendar Ads</a>
-        <a class="active" href="./best-of.html">Best Of Contest</a>
-        <a href="./index.html#contact">Contact</a>
-      </nav>
-    
-      <div class="nav-actions">
-        <a class="btn btn-outline-light" href="/book">Book a Call</a>
-        <a class="btn btn-primary" href="/buy">Buy Ads</a>
-      </div>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Best Of contest advertising for the Vallejo Sun." />
+  <title>Best Of Contest · Vallejo Sun</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="./index.html" aria-label="Vallejo Sun Media Kit home">
+      <img src="./images/vallejo-sun-logo.png" alt="Vallejo Sun" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="" href="./index.html">Home</a>
+      <a class="" href="./offerings.html">Ad Offerings</a>
+      <a class="" href="./calendar.html">Calendar Ads</a>
+      <a class="active" href="./best-of.html">Best Of Contest</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline-light" href="/book">Book a Call</a>
+      <a class="btn btn-primary" href="/buy">Buy Ads</a>
     </div>
-  </header>
-
+  </div>
+</header>
 <main>
   <section class="page-header"><div class="container">
     <h1>Best Of contest</h1>
     <p>Use this page for annual or seasonal contest sponsorships, voting-period promotion, and category-based advertising sold through a separate system.</p>
   </div></section>
-  <section><div class="container">
-    <div class="card">
-      <h3>Best Of sponsorship opportunities</h3>
-      <p>Add contest dates, packages, visibility, sponsor benefits, and links to your separate Best Of intake or checkout flow.</p>
-      <div class="pill-links">
-        <a class="btn btn-primary" href="/best-of">View Best Of options</a>
-        <a class="btn btn-secondary" href="/contact">Ask a Question</a>
-      </div>
+  <section><div class="container"><div class="card">
+    <h3>Best Of sponsorship opportunities</h3>
+    <p>Add contest dates, packages, visibility, sponsor benefits, and links to your separate Best Of intake or checkout flow.</p>
+    <div class="pill-links">
+      <a class="btn btn-primary" href="/best-of">View Best Of options</a>
+      <a class="btn btn-secondary" href="/contact">Ask a Question</a>
     </div>
-  </div></section>
+  </div></div></section>
 </main>
 <footer><div class="container"><div>Vallejo Sun Media Kit</div></div></footer>
-</body></html>
+
+</body>
+</html>
