@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Choose and purchase advertising with the Vallejo Sun." />
+  <title>Buy Ads · Vallejo Sun</title>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    .buy-shell {
+      padding: 3rem 0 4rem;
+    }
+
+    .buy-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .buy-card,
+    .buy-sidebar {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+    }
+
+    .buy-card h1 {
+      margin-bottom: 0.75rem;
+    }
+
+    .buy-card .lede {
+      color: var(--muted);
+      max-width: 44rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .selection-list {
+      display: grid;
+      gap: 0.875rem;
+      margin-top: 1.5rem;
+    }
+
+    .selection-option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 1rem 1rem 1.1rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 14px;
+      background: #ffffff;
+      color: inherit;
+      cursor: pointer;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .selection-option:hover,
+    .selection-option:focus-visible {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(254, 215, 0, 0.18);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .selection-option.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(254, 215, 0, 0.18);
+    }
+
+    .selection-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+
+    .selection-top h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .selection-price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .selection-option p {
+      margin: 0 0 0.65rem;
+      color: var(--muted);
+    }
+
+    .selection-option ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .selection-option li + li {
+      margin-top: 0.35rem;
+    }
+
+    .summary-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .summary-name {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .summary-price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .summary-price small {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .summary-copy {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .summary-list {
+      margin: 0 0 1.25rem;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .summary-list li + li {
+      margin-top: 0.4rem;
+    }
+
+    .buy-sidebar .btn {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .fine-print {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .help-links {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .help-links a {
+      font-weight: 600;
+    }
+
+    .empty-state {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    @media (max-width: 860px) {
+      .buy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .buy-shell {
+        padding: 2rem 0 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="./index.html" aria-label="Vallejo Sun Media Kit home">
+      <img src="./images/vallejo-sun-logo.png" alt="Vallejo Sun" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./index.html">Home</a>
+      <a href="./offerings.html">Ad Offerings</a>
+      <a href="https://hub.cityspark.com/event/submission/VallejoSun" target="_blank" rel="noopener">Calendar Ads</a>
+      <a href="https://bestof.vallejosun.com/advertise" target="_blank" rel="noopener">Best Of Contest</a>
+      <a href="./buy.html" class="active">Buy Ads</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline-light" href="/book">Book a Call</a>
+      <a class="btn btn-primary" href="./buy.html">Buy Ads</a>
+    </div>
+  </div>
+</header>
+
+<main class="buy-shell">
+  <div class="container">
+    <div class="buy-grid">
+      <section class="buy-card" aria-labelledby="buy-heading">
+        <div class="eyebrow">Choose your option</div>
+        <h1 id="buy-heading">Buy ads</h1>
+        <p class="lede">Select a package or placement below, then continue to secure your campaign through Stripe checkout. After payment, you’ll be able to send us your ad details and materials.</p>
+
+        <div id="selection-list" class="selection-list" aria-live="polite"></div>
+      </section>
+
+      <aside class="buy-sidebar" aria-labelledby="summary-heading">
+        <div class="eyebrow">Your selection</div>
+        <h2 id="summary-heading" class="summary-title">Campaign summary</h2>
+        <div id="summary-content">
+          <p class="empty-state">Choose a package or placement to continue.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container"><div>Vallejo Sun Media Kit</div></div>
+</footer>
+
+<script>
+  const PRODUCTS = {
+    "event-promotion-special": {
+      name: "Event Promotion Special",
+      price: "$400",
+      note: "One-time package",
+      description: "Promote your event across the Vallejo Sun’s calendar, newsletter, and website.",
+      items: [
+        "Featured event listing for 1 week",
+        "2 newsletter placements",
+        "Leaderboard ad for 2 weeks"
+      ],
+      checkoutUrl: "https://buy.stripe.com/REPLACE_EVENT_PROMOTION"
+    },
+    "brand-builder": {
+      name: "Brand Builder",
+      price: "$450",
+      note: "One-time package",
+      description: "Stay visible across Vallejo Sun coverage and reach engaged readers regularly.",
+      items: [
+        "In-story ad for 1 month",
+        "2 newsletter placements"
+      ],
+      checkoutUrl: "https://buy.stripe.com/REPLACE_BRAND_BUILDER"
+    },
+    "brand-builder-plus": {
+      name: "Brand Builder Plus",
+      price: "$800",
+      note: "One-time package",
+      description: "Layer top-of-page visibility on top of steady exposure across our coverage and newsletters.",
+      items: [
+        "In-story ad for 1 month",
+        "Leaderboard ad for 1 month",
+        "2 newsletter placements"
+      ],
+      checkoutUrl: "https://buy.stripe.com/REPLACE_BRAND_BUILDER_PLUS"
+    },
+    "announcement-launch": {
+      name: "Announcement / Launch",
+      price: "$200",
+      note: "One-time package",
+      description: "Promote a new business, listing, opening, or limited-time announcement with a short, focused campaign.",
+      items: [
+        "1 newsletter placement",
+        "In-story ad for 2 weeks"
+      ],
+      checkoutUrl: "https://buy.stripe.com/REPLACE_ANNOUNCEMENT"
+    },
+    "leaderboard": {
+      name: "Leaderboard Ad",
+      price: "$500",
+      note: "Per month",
+      description: "Stay visible at the top of every article and on the Vallejo Sun homepage.",
+      items: [
+        "Top placement across all coverage",
+        "20,000–30,000 monthly impressions",
+        "~0.8% click-through rate"
+      ],
+      checkoutUrl: "https://buy.stripe.com/REPLACE_LEADERBOARD"
+    },
+    "instory": {
+      name: "In-Story Ad",
+      price: "$300",
+      note: "Per month",
+      description: "Build repeated visibility across the stories Vallejo readers spend time with.",
+      items: [
+        "Appears within article content",
+        "80,000–100,000 monthly impressions",
+        "High-frequency exposure across regular readers"
+      ],
+      checkoutUrl: "https://buy.stripe.com/REPLACE_INSTORY"
+    },
+    "weekly-newsletter": {
+      name: "News Roundup Newsletter",
+      price: "$100",
+      note: "Per placement",
+      description: "Reach engaged local readers directly in their inbox.",
+      items: [
+        "~6,200 subscribers",
+        "40–50% open rate",
+        "4–6% click-through rate",
+        "Distributed every Friday"
+      ],
+      checkoutUrl: "https://buy.stripe.com/REPLACE_WEEKLY_NEWSLETTER"
+    },
+    "arts-newsletter": {
+      name: "Arts & Entertainment Newsletter",
+      price: "$100",
+      note: "Per placement",
+      description: "Promote events and local offerings to readers looking for things to do.",
+      items: [
+        "~6,200 subscribers",
+        "40–50% open rate",
+        "Distributed every Wednesday"
+      ],
+      checkoutUrl: "https://buy.stripe.com/REPLACE_ARTS_NEWSLETTER"
+    }
+  };
+
+  const productOrder = [
+    "event-promotion-special",
+    "brand-builder",
+    "brand-builder-plus",
+    "announcement-launch",
+    "leaderboard",
+    "instory",
+    "weekly-newsletter",
+    "arts-newsletter"
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  let selectedProduct = params.get("product") || productOrder[0];
+
+  const selectionList = document.getElementById("selection-list");
+  const summaryContent = document.getElementById("summary-content");
+
+  function renderOptions() {
+    selectionList.innerHTML = "";
+
+    productOrder.forEach((key) => {
+      const product = PRODUCTS[key];
+      if (!product) return;
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "selection-option" + (key === selectedProduct ? " active" : "");
+      button.setAttribute("aria-pressed", key === selectedProduct ? "true" : "false");
+      button.innerHTML = `
+        <div class="selection-top">
+          <h3>${product.name}</h3>
+          <div class="selection-price">${product.price}</div>
+        </div>
+        <p>${product.description}</p>
+        <ul>${product.items.map((item) => `<li>${item}</li>`).join("")}</ul>
+      `;
+      button.addEventListener("click", () => {
+        selectedProduct = key;
+        const url = new URL(window.location.href);
+        url.searchParams.set("product", key);
+        window.history.replaceState({}, "", url);
+        renderOptions();
+        renderSummary();
+      });
+      selectionList.appendChild(button);
+    });
+  }
+
+  function renderSummary() {
+    const product = PRODUCTS[selectedProduct];
+    if (!product) {
+      summaryContent.innerHTML = '<p class="empty-state">Choose a package or placement to continue.</p>';
+      return;
+    }
+
+    summaryContent.innerHTML = `
+      <div class="summary-name">${product.name}</div>
+      <div class="summary-price">${product.price}<small>${product.note}</small></div>
+      <p class="summary-copy">${product.description}</p>
+      <ul class="summary-list">
+        ${product.items.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+      <a class="btn btn-primary" href="${product.checkoutUrl}">Continue to Checkout</a>
+      <p class="fine-print">After checkout, you’ll be sent to a short form to provide your ad details, timing, and materials.</p>
+      <div class="help-links">
+        <a href="/book">Prefer to talk first? Book a call.</a>
+        <a href="./offerings.html">Back to ad offerings</a>
+      </div>
+    `;
+  }
+
+  if (!PRODUCTS[selectedProduct]) {
+    selectedProduct = productOrder[0];
+  }
+
+  renderOptions();
+  renderSummary();
+</script>
+</body>
+</html>

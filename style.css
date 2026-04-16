@@ -204,3 +204,91 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
 .cta-box .cta-actions {
   margin-top: 1.5rem;
 }
+
+
+/* Offerings page and shared card enhancements */
+
+.package-grid .card h3 {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+.package-grid .card,
+.cards-3 .card,
+.buy-selection-grid .selection-option {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .list {
+  margin: 1rem 0 1.25rem;
+}
+
+.card .btn-block {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.price s {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration-thickness: 1.5px;
+}
+
+.card .price {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.package-grid .card.is-popular {
+  position: relative;
+  border: 2px solid var(--accent);
+}
+
+.package-grid .card.is-popular::before {
+  content: "Most popular";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a6b00;
+}
+
+.section-bridge {
+  padding: 0.25rem 0;
+}
+
+.section-bridge-text {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: left;
+  color: var(--text);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  border-top: 2px solid rgba(0,0,0,0.12);
+  padding-top: 0.5rem;
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .package-grid .card.is-popular {
+    transform: translateY(-4px);
+  }
+}
