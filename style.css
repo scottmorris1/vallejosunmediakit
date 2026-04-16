@@ -163,6 +163,8 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   .nav-actions .btn:not(.btn-primary) { display: none; }
   .btn, .hero-actions .btn, .cta-actions .btn, .pill-links .btn { width: 100%; }
   .brand img { height: 30px; }
+  .contact-grid, .form-row { grid-template-columns: 1fr; }
+  .contact-shell { padding: 2rem 0 3rem; }
 }
 
 
@@ -291,4 +293,128 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   .package-grid .card.is-popular {
     transform: translateY(-4px);
   }
+}
+
+
+/* Contact page */
+.contact-shell {
+  padding: 3rem 0 4rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-card,
+.contact-sidebar {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+}
+
+.contact-intro {
+  margin-bottom: 1.5rem;
+}
+
+.contact-intro h1 {
+  margin-bottom: 0.75rem;
+}
+
+.contact-intro p {
+  max-width: 42rem;
+  font-size: 1.05rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  font: inherit;
+  background: #ffffff;
+  color: inherit;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(254, 215, 0, 0.18);
+}
+
+.field textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.contact-actions .btn {
+  min-width: 180px;
+  justify-content: center;
+}
+
+.checkbox-inline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 500;
+  max-width: 420px;
+}
+
+.contact-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.sidebar-list {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.sidebar-list li + li {
+  margin-top: 0.55rem;
+}
+
+.sidebar-block + .sidebar-block {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
