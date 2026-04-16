@@ -571,3 +571,39 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     width: 100%;
   }
 }
+
+/* Fix hamburger visibility + spacing */
+.nav-toggle {
+  color: #fff;
+}
+
+.topbar {
+  position: relative;
+}
+
+@media (max-width: 860px) {
+  .nav {
+    align-items: center;
+  }
+
+  .nav-toggle {
+    margin-left: auto;
+    padding: 0.5rem;
+  }
+
+  .topbar.nav-open .nav-actions {
+    margin-top: 0.5rem;
+  }
+
+  .topbar.nav-open .nav-actions .btn {
+    width: 100%;
+  }
+
+  .topbar.nav-open .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .topbar.nav-open .nav-actions a.btn-primary {
+    margin-top: 0.5rem;
+  }
+}
