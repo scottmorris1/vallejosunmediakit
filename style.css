@@ -163,7 +163,6 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   .nav-actions .btn:not(.btn-primary) { display: none; }
   .btn, .hero-actions .btn, .cta-actions .btn, .pill-links .btn { width: 100%; }
   .brand img { height: 30px; }
-  .contact-grid, .form-row { grid-template-columns: 1fr; }
   .contact-shell { padding: 2rem 0 3rem; }
 }
 
@@ -476,4 +475,48 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
 
 .offerings-guide a {
   font-weight: 600;
+}
+
+
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card,
+  .contact-sidebar {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contact-card {
+    order: 1;
+  }
+
+  .contact-sidebar {
+    order: 2;
+  }
+
+  .contact-shell {
+    padding: 2rem 0 3rem;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+
+  .checkbox-inline,
+  .contact-help {
+    max-width: none;
+  }
 }
