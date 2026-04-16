@@ -20,6 +20,15 @@
       <a href="https://bestof.vallejosun.com/advertise" target="_blank" rel="noopener">Best Of Contest</a>
       <a href="./contact.html">Contact</a>
     </nav>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M3 6h18"></path>
+        <path d="M3 12h18"></path>
+        <path d="M3 18h18"></path>
+      </svg>
+    </button>
+
     <div class="nav-actions">
       <a class="btn btn-outline-light" href="https://calendar.proton.me/bookings#GaKm4o3hgP7zuDBAB4oR7ZU6LmCOGeGwRCEpAeerXy8=">Book a Call</a>
       <a class="btn btn-primary" href="./buy.html">Buy Ads</a>
@@ -48,6 +57,19 @@
     <a href="https://www.vallejosun.com/editorial-independence-policy/" target="_blank" rel="noopener">Editorial policies</a>
   </div>
 </footer>
+
+
+<script>
+(function () {
+  var topbar = document.querySelector('.topbar');
+  var toggle = document.querySelector('.nav-toggle');
+  if (!topbar || !toggle) return;
+  toggle.addEventListener('click', function () {
+    var open = topbar.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
 
 </body>
 </html>
