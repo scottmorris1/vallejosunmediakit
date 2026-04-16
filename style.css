@@ -709,3 +709,19 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     margin-top: 0;
   }
 }
+
+
+/* Fix mobile menu gap (single continuous panel) */
+@media (max-width: 860px) {
+  .topbar.nav-open .nav-links,
+  .topbar.nav-open .nav-actions {
+    position: static;
+    background: #000;
+    box-shadow: none;
+  }
+
+  .topbar.nav-open .nav {
+    background: #000;
+    padding-bottom: 1rem;
+  }
+}
