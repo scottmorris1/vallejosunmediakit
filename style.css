@@ -656,3 +656,56 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     margin-top: 0;
   }
 }
+
+
+/* Mobile nav overlay refinement */
+@media (max-width: 860px) {
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .topbar .nav {
+    position: relative;
+  }
+
+  .topbar .nav-links,
+  .topbar .nav-actions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #000;
+    padding: 0 0 1rem;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    z-index: 2;
+  }
+
+  .topbar .nav-links {
+    top: calc(100% + 0.25rem);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .topbar .nav-actions {
+    top: calc(100% + 15.25rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .topbar.nav-open .nav-links,
+  .topbar.nav-open .nav-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .topbar.nav-open .nav-actions a.btn-primary,
+  .topbar.nav-open .nav-actions a.btn-outline-light {
+    margin-top: 0;
+  }
+}
