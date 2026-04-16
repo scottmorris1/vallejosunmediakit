@@ -418,3 +418,26 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   padding-top: 1.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
+
+.site-footer {
+  background: #000;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
