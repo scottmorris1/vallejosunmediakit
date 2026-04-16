@@ -173,6 +173,31 @@
       margin: 0;
     }
 
+
+    .selection-section-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 1.75rem 0 0.65rem;
+    }
+
+    .selection-section-label:first-child {
+      margin-top: 0;
+    }
+
+    .selection-list.placements-list {
+      margin-top: 0.75rem;
+    }
+
+    .selection-list.placements-list .selection-option {
+      border-color: rgba(0, 0, 0, 0.08);
+      box-shadow: none;
+    }
+
+    .selection-list.placements-list .selection-top h3 {
+      font-size: 1.08rem;
+    }
+
     @media (max-width: 860px) {
       .buy-grid {
         grid-template-columns: 1fr;
@@ -213,7 +238,11 @@
         <h1 id="buy-heading">Buy ads</h1>
         <p class="lede">Select a package or placement below, then continue to secure your campaign through Stripe checkout. After payment, you’ll be able to send us your ad details and materials.</p>
 
-        <div id="selection-list" class="selection-list" aria-live="polite"></div>
+        <div class="selection-section-label">Recommended packages</div>
+        <div id="package-list" class="selection-list" aria-live="polite"></div>
+
+        <div class="selection-section-label">Individual placements</div>
+        <div id="placement-list" class="selection-list placements-list" aria-live="polite"></div>
       </section>
 
       <aside class="buy-sidebar" aria-labelledby="summary-heading">
@@ -335,51 +364,68 @@
     }
   };
 
-  const productOrder = [
+  const packageOrder = [
     "event-promotion-special",
     "brand-builder",
     "top-visibility",
-    "announcement-launch",
+    "announcement-launch"
+  ];
+
+  const placementOrder = [
     "leaderboard",
     "instory",
     "weekly-newsletter",
     "arts-newsletter"
   ];
 
-  const params = new URLSearchParams(window.location.search);
-  let selectedProduct = params.get("product") || productOrder[0];
+  const allProducts = [...packageOrder, ...placementOrder];
 
-  const selectionList = document.getElementById("selection-list");
+  const params = new URLSearchParams(window.location.search);
+  let selectedProduct = params.get("product") || packageOrder[0];
+
+  const packageList = document.getElementById("package-list");
+  const placementList = document.getElementById("placement-list");
   const summaryContent = document.getElementById("summary-content");
 
-  function renderOptions() {
-    selectionList.innerHTML = "";
+  function createOption(key) {
+    const product = PRODUCTS[key];
+    if (!product) return null;
 
-    productOrder.forEach((key) => {
-      const product = PRODUCTS[key];
-      if (!product) return;
-
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "selection-option" + (key === selectedProduct ? " active" : "");
-      button.setAttribute("aria-pressed", key === selectedProduct ? "true" : "false");
-      button.innerHTML = `
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "selection-option" + (key === selectedProduct ? " active" : "");
+    button.setAttribute("aria-pressed", key === selectedProduct ? "true" : "false");
+    button.innerHTML = `
         <div class="selection-top">
           <h3>${product.name}</h3>
           <div class="selection-price">${product.price}</div>
         </div>
         <p>${product.description}</p>
         <ul>${product.items.map((item) => `<li>${item}</li>`).join("")}</ul>
-      `;
-      button.addEventListener("click", () => {
-        selectedProduct = key;
-        const url = new URL(window.location.href);
-        url.searchParams.set("product", key);
-        window.history.replaceState({}, "", url);
-        renderOptions();
-        renderSummary();
-      });
-      selectionList.appendChild(button);
+    `;
+    button.addEventListener("click", () => {
+      selectedProduct = key;
+      const url = new URL(window.location.href);
+      url.searchParams.set("product", key);
+      window.history.replaceState({}, "", url);
+      renderOptions();
+      renderSummary();
+    });
+    return button;
+  }
+
+  function renderOptions() {
+    packageList.innerHTML = "";
+    placementList.innerHTML = "";
+
+    packageOrder.forEach((key) => {
+      const option = createOption(key);
+      if (option) packageList.appendChild(option);
+    });
+
+    placementOrder.forEach((key) => {
+      const option = createOption(key);
+      if (option) placementList.appendChild(option);
     });
   }
 
@@ -407,7 +453,7 @@
   }
 
   if (!PRODUCTS[selectedProduct]) {
-    selectedProduct = productOrder[0];
+    selectedProduct = packageOrder[0];
   }
 
   renderOptions();

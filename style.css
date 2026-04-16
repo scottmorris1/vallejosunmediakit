@@ -441,3 +441,39 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
 .site-footer a:hover {
   text-decoration: underline;
 }
+
+.offerings-guide {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0.75rem 0 0;
+  max-width: 52rem;
+}
+
+.offerings-guide a {
+  font-weight: 700;
+}
+
+.placements-grid .card {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.placements-grid .card h3 {
+  font-size: 1.35rem;
+}
+
+
+.offerings-guide {
+  margin: 0.75rem 0 1.5rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.offerings-guide li {
+  margin-bottom: 0.4rem;
+}
+
+.offerings-guide a {
+  font-weight: 600;
+}
