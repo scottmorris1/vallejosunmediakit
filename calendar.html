@@ -74,8 +74,8 @@
     }
     var navRect = topbar.querySelector('.nav').getBoundingClientRect();
     var linksRect = navLinks.getBoundingClientRect();
-    var relativeTop = (linksRect.bottom - navRect.top);
-    navActions.style.top = 'calc(100% + ' + (relativeTop - navRect.height + 4) + 'px)';
+    var relativeTop = linksRect.bottom - navRect.top;
+    navActions.style.top = 'calc(100% + ' + (relativeTop - navRect.height - 1) + 'px)';
   }
 
   if (!topbar || !toggle) return;
