@@ -207,6 +207,79 @@
         padding: 2rem 0 3rem;
       }
     }
+  
+    .mobile-buy-helper {
+      display: none;
+      color: var(--muted);
+      margin: 0.5rem 0 1rem;
+    }
+
+    .mobile-checkout-bar {
+      display: none;
+    }
+
+    @media (max-width: 860px) {
+      .mobile-buy-helper {
+        display: block;
+      }
+
+      .buy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .buy-sidebar {
+        display: none;
+      }
+
+      .buy-shell {
+        padding: 2rem 0 6.5rem;
+      }
+
+      .mobile-checkout-bar {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 40;
+        background: rgba(0, 0, 0, 0.96);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.18);
+      }
+
+      .mobile-checkout-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.85rem 1rem calc(0.85rem + env(safe-area-inset-bottom));
+        display: flex;
+        gap: 0.85rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mobile-checkout-meta {
+        min-width: 0;
+      }
+
+      .mobile-checkout-name {
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.2;
+        font-size: 0.95rem;
+      }
+
+      .mobile-checkout-price {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.9rem;
+        margin-top: 0.15rem;
+      }
+
+      .mobile-checkout-bar .btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -265,6 +338,16 @@
     </div>
   </div>
 </main>
+
+<div id="mobile-checkout-bar" class="mobile-checkout-bar" aria-live="polite">
+  <div class="mobile-checkout-inner">
+    <div class="mobile-checkout-meta">
+      <div id="mobile-checkout-name" class="mobile-checkout-name">Selected option</div>
+      <div id="mobile-checkout-price" class="mobile-checkout-price">$0</div>
+    </div>
+    <a id="mobile-checkout-link" class="btn btn-primary" href="#">Continue to checkout</a>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="container footer-inner">
@@ -443,6 +526,12 @@
     const product = PRODUCTS[selectedProduct];
     if (!product) {
       summaryContent.innerHTML = '<p class="empty-state">Choose a package or placement to continue.</p>';
+      const mobileName = document.getElementById("mobile-checkout-name");
+      const mobilePrice = document.getElementById("mobile-checkout-price");
+      const mobileLink = document.getElementById("mobile-checkout-link");
+      if (mobileName) mobileName.textContent = "Selected option";
+      if (mobilePrice) mobilePrice.textContent = "$0";
+      if (mobileLink) mobileLink.setAttribute("href", "#");
       return;
     }
 
@@ -460,6 +549,13 @@
         <a href="./offerings.html">Back to ad offerings</a>
       </div>
     `;
+
+    const mobileName = document.getElementById("mobile-checkout-name");
+    const mobilePrice = document.getElementById("mobile-checkout-price");
+    const mobileLink = document.getElementById("mobile-checkout-link");
+    if (mobileName) mobileName.textContent = product.name;
+    if (mobilePrice) mobilePrice.textContent = `${product.price} · ${product.note}`;
+    if (mobileLink) mobileLink.setAttribute("href", product.checkoutUrl);
   }
 
   if (!PRODUCTS[selectedProduct]) {
@@ -501,18 +597,6 @@
 })();
 </script>
 
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const cards = document.querySelectorAll(".card");
-  cards.forEach(card => {
-    card.addEventListener("click", function() {
-      cards.forEach(c => c.classList.remove("selected"));
-      this.classList.add("selected");
-    });
-  });
-});
-</script>
 
 </body>
 </html>
