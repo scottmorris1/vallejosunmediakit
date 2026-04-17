@@ -760,3 +760,26 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     z-index: 11;
   }
 }
+
+/* Mobile buy page improvements */
+.mobile-buy-helper {
+  display: none;
+  color: var(--muted);
+  margin: 0.5rem 0 1rem;
+}
+
+.mobile-checkout {
+  display: none;
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+.card.selected .mobile-checkout {
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .mobile-buy-helper {
+    display: block;
+  }
+}

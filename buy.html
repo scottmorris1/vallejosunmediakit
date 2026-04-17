@@ -245,6 +245,7 @@
       <section class="buy-card" aria-labelledby="buy-heading">
         <div class="eyebrow">Choose your option</div>
         <h1 id="buy-heading">Buy ads</h1>
+<p class="mobile-buy-helper">Select an option below to continue to checkout.</p>
         <p class="lede">Select a package or placement below, then continue to secure your campaign through Stripe checkout. After payment, you’ll be able to send us your ad details and materials.</p>
 
         <div class="selection-section-label">Recommended packages</div>
@@ -498,6 +499,19 @@
   window.addEventListener('resize', positionMobileActions);
   window.addEventListener('load', positionMobileActions);
 })();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    card.addEventListener("click", function() {
+      cards.forEach(c => c.classList.remove("selected"));
+      this.classList.add("selected");
+    });
+  });
+});
 </script>
 
 </body>
