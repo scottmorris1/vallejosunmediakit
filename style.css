@@ -682,7 +682,7 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   }
 
   .topbar .nav-links {
-    top: calc(100% + 0.25rem);
+    top: calc(100% + 0.25rem - 1px);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 0.75rem;
     padding-left: 1rem;
@@ -733,7 +733,7 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
 
   .topbar.nav-open .nav-links {
     position: absolute;
-    top: calc(100% + 0.25rem);
+    top: calc(100% + 0.25rem - 1px);
     left: 0;
     right: 0;
     background: #000;
@@ -747,7 +747,7 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     position: absolute;
     left: 0;
     right: 0;
-    top: calc(100% + 0.25rem);
+    top: calc(100% + 0.25rem - 1px);
     background: #000;
     padding: 0.5rem 1rem 1.25rem;
     box-shadow: none;
