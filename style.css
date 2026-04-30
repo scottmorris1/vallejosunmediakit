@@ -783,3 +783,21 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     display: block;
   }
 }
+
+
+/* Sticky header on desktop and mobile */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+/* Larger testimonial text */
+.testimonial-text,
+.large-testimonial,
+.testimonial blockquote,
+.testimonial p {
+  font-size: 1.18rem;
+  line-height: 1.55;
+}
