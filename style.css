@@ -106,7 +106,7 @@ section { padding: 4rem 0; }
   padding: 1.25rem; border-left: 4px solid var(--accent); background: #fffdf2;
   border-radius: 0 var(--radius) var(--radius) 0;
 }
-.quote p { margin: 0 0 0.75rem; font-size: 1.02rem; color: #222; }
+.quote p { margin: 0 0 0.75rem; font-size: 1.18rem; line-height: 1.55; color: #222; }
 .quote footer { color: var(--muted); font-size: 0.95rem; }
 
 .photos { display: grid; grid-template-columns: 1fr; gap: 1rem; }
