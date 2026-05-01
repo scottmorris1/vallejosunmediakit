@@ -801,3 +801,16 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   font-size: 1.18rem;
   line-height: 1.55;
 }
+
+.email-capture {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.email-capture input {
+  flex: 1;
+  padding: 0.6rem;
+}
+.email-capture button {
+  padding: 0.6rem 1rem;
+}
