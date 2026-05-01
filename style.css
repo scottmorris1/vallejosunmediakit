@@ -814,3 +814,29 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
 .email-capture button {
   padding: 0.6rem 1rem;
 }
+
+
+/* Email capture styling adjustments */
+.email-capture {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-basis: 100%; /* force new line in flex containers */
+  width: 100%;
+  margin-top: 0.75rem; /* separate from buttons above */
+}
+
+.email-capture input[type="email"] {
+  min-width: 220px;
+  flex: 1;
+  border: 1px solid var(--border, rgba(0,0,0,0.12));
+  border-radius: 999px; /* pill shape to match buttons */
+  padding: 0.78rem 1rem;
+  font: inherit;
+}
+
+.email-capture .btn {
+  border-radius: 999px; /* ensure button matches */
+  white-space: nowrap;
+}
