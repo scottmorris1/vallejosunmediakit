@@ -816,75 +816,21 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
 }
 
 
-/* Email capture styling adjustments */
-.email-capture {
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-basis: 100%; /* force new line in flex containers */
-  width: 100%;
-  margin-top: 0.75rem; /* separate from buttons above */
-}
-
-.email-capture input[type="email"] {
-  min-width: 220px;
-  flex: 1;
-  border: 1px solid var(--border, rgba(0,0,0,0.12));
-  border-radius: 999px; /* pill shape to match buttons */
-  padding: 0.78rem 1rem;
-  font: inherit;
-}
-
-.email-capture .btn {
-  border-radius: 999px; /* ensure button matches */
-  white-space: nowrap;
-}
 
 
-/* Limit width of email capture on desktop */
-.email-capture {
-  max-width: 420px;
-}
-
-@media (min-width: 768px) {
-  .email-capture {
-    max-width: 420px;
-  }
-}
 
 
-/* Force email form to new line, keep inner layout clean */
-.email-capture {
-  display: block;
-  max-width: 420px;
-  width: 100%;
-  margin-top: 0.75rem;
-}
-
-.email-capture-row {
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-}
-
-.email-capture-row input[type="email"] {
-  flex: 1;
-  border-radius: 999px;
-}
-
-.email-capture-row .btn {
-  border-radius: 999px;
-}
 
 
-/* Advertiser updates email capture */
+
+
+
+/* Advertiser update email forms */
 .email-capture-wrap {
   display: block;
   width: 100%;
   max-width: 420px;
   margin-top: 0.85rem;
-  clear: both;
 }
 
 .email-capture {
@@ -899,202 +845,54 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
 .email-capture input[type="email"] {
   flex: 1 1 auto;
   min-width: 0;
+  box-sizing: border-box;
   border: 1px solid var(--border, rgba(0,0,0,0.12));
   border-radius: 999px;
   padding: 0.78rem 1rem;
   font: inherit;
-}
-
-.email-capture button {
-  flex: 0 0 auto;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .email-capture-wrap {
-    max-width: none;
-    padding-right: 0;
-  }
-
-  .email-capture {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-    max-width: none;
-  }
-
-  .email-capture input[type="email"],
-  .email-capture button {
-    width: 100%;
-  }
-}
-
-
-/* Mobile: full-width input, auto-width button below (Option A) */
-@media (max-width: 640px) {
-  .email-capture {
-    display: grid !important;
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-  }
-
-  .email-capture input[type="email"] {
-    width: 100% !important;
-  }
-
-  .email-capture button {
-    width: auto !important;
-    align-self: flex-start;
-  }
-}
-
-/* Final advertiser updates form layout override */
-.email-capture-wrap {
-  display: block !important;
-  width: 100%;
-  max-width: 420px;
-  margin-top: 0.85rem;
-  clear: both;
-}
-
-.email-capture {
-  display: flex !important;
-  width: 100%;
-  max-width: 420px;
-  gap: 0.6rem;
-  align-items: center;
-  margin: 0;
-}
-
-.email-capture input[type="email"] {
-  flex: 1 1 auto;
-  min-width: 0;
-  border: 1px solid var(--border, rgba(0,0,0,0.12));
-  border-radius: 999px;
-  padding: 0.78rem 1rem;
-  font: inherit;
-}
-
-.email-capture button {
-  flex: 0 0 auto;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .email-capture-wrap {
-    max-width: none;
-    width: 100%;
-  }
-
-  .email-capture {
-    display: grid !important;
-    grid-template-columns: 1fr;
-    max-width: none;
-    width: 100%;
-  }
-
-  .email-capture input[type="email"] {
-    width: 100% !important;
-  }
-
-  .email-capture button {
-    width: auto !important;
-    justify-self: start;
-    align-self: start;
-  }
-}
-
-
-/* Hard fix: advertiser update forms */
-.pill-links + .email-capture-wrap,
-.cta-actions + .email-capture-wrap,
-.final-cta .email-capture-wrap {
-  display: block !important;
-  flex: 0 0 100% !important;
-  width: 100% !important;
-  max-width: 420px !important;
-  margin-top: 0.85rem !important;
-  clear: both !important;
-}
-
-.email-capture {
-  display: flex !important;
-  max-width: 420px !important;
-  width: 100% !important;
-  gap: 0.6rem !important;
-  align-items: center !important;
-}
-
-.email-capture input[type="email"] {
-  min-width: 0 !important;
-  flex: 1 1 auto !important;
-  border-radius: 999px !important;
 }
 
 .email-capture-submit,
-.email-capture button.email-capture-submit,
-.cta .email-capture button.email-capture-submit,
-.pill-links + .email-capture-wrap button.email-capture-submit {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #111 !important;
-  border-radius: 999px !important;
-  white-space: nowrap !important;
+.email-capture button.email-capture-submit {
+  flex: 0 0 auto;
+  width: auto;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #111;
 }
 
-.email-capture-submit:hover {
-  background: var(--accent-hover) !important;
-  border-color: var(--accent-hover) !important;
-  color: #111 !important;
+.email-capture-submit:hover,
+.email-capture button.email-capture-submit:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #111;
 }
 
-@media (max-width: 640px) {
-  .email-capture {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    max-width: none !important;
-    width: 100% !important;
-  }
-
-  .email-capture input[type="email"] {
-    width: 100% !important;
-  }
-
-  .email-capture-submit,
-  .email-capture button.email-capture-submit {
-    width: auto !important;
-    justify-self: start !important;
-  }
-}
-
-
-/* Mobile email capture refinements */
 @media (max-width: 640px) {
   .email-capture-wrap {
-    width: 100% !important;
-    max-width: none !important;
+    width: 100%;
+    max-width: none;
   }
 
   .email-capture {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: none !important;
-    row-gap: 0.75rem !important;
+    display: block;
+    width: 100%;
+    max-width: none;
   }
 
   .email-capture input[type="email"] {
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 0.75rem 0;
   }
 
   .email-capture-submit,
   .email-capture button.email-capture-submit {
-    width: auto !important;
-    justify-self: start !important;
-    margin-top: 0 !important;
+    display: inline-flex;
+    width: auto;
+    max-width: 100%;
   }
 }
