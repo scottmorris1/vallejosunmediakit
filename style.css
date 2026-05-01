@@ -840,3 +840,15 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
   border-radius: 999px; /* ensure button matches */
   white-space: nowrap;
 }
+
+
+/* Limit width of email capture on desktop */
+.email-capture {
+  max-width: 420px;
+}
+
+@media (min-width: 768px) {
+  .email-capture {
+    max-width: 420px;
+  }
+}
