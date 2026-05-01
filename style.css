@@ -1068,3 +1068,33 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     justify-self: start !important;
   }
 }
+
+
+/* Mobile email capture refinements */
+@media (max-width: 640px) {
+  .email-capture-wrap {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .email-capture {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: none !important;
+    row-gap: 0.75rem !important;
+  }
+
+  .email-capture input[type="email"] {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .email-capture-submit,
+  .email-capture button.email-capture-submit {
+    width: auto !important;
+    justify-self: start !important;
+    margin-top: 0 !important;
+  }
+}
