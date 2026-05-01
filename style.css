@@ -948,3 +948,60 @@ footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; backgrou
     align-self: flex-start;
   }
 }
+
+/* Final advertiser updates form layout override */
+.email-capture-wrap {
+  display: block !important;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 0.85rem;
+  clear: both;
+}
+
+.email-capture {
+  display: flex !important;
+  width: 100%;
+  max-width: 420px;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0;
+}
+
+.email-capture input[type="email"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 1px solid var(--border, rgba(0,0,0,0.12));
+  border-radius: 999px;
+  padding: 0.78rem 1rem;
+  font: inherit;
+}
+
+.email-capture button {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .email-capture-wrap {
+    max-width: none;
+    width: 100%;
+  }
+
+  .email-capture {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    max-width: none;
+    width: 100%;
+  }
+
+  .email-capture input[type="email"] {
+    width: 100% !important;
+  }
+
+  .email-capture button {
+    width: auto !important;
+    justify-self: start;
+    align-self: start;
+  }
+}
